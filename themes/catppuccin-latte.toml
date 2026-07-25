@@ -1,0 +1,96 @@
+[meta]
+name = "catppuccin-latte"
+variant = "light"
+
+[palette]
+base = "#eff1f5"
+mantle = "#e6e9ef"
+crust = "#dce0e8"
+text = "#4c4f69"
+subtext1 = "#5c5f77"
+subtext0 = "#6c6f85"
+surface2 = "#acb0be"
+surface1 = "#bcc0cc"
+surface0 = "#ccd0da"
+overlay2 = "#7c7f93"
+overlay1 = "#8c8fa1"
+overlay0 = "#9ca0b0"
+blue = "#1e66f5"
+lavender = "#7287fd"
+sapphire = "#209fb5"
+sky = "#04a5e5"
+teal = "#179299"
+green = "#40a02b"
+yellow = "#df8e1d"
+peach = "#fe640b"
+maroon = "#e64553"
+red = "#d20f39"
+mauve = "#8839ef"
+pink = "#ea76cb"
+flamingo = "#dd7878"
+rosewater = "#dc8a78"
+
+[heading]
+h1 = { fg = "mauve", bold = true, underline = true }
+h2 = { fg = "blue", bold = true }
+h3 = { fg = "green", bold = true }
+h4 = { fg = "yellow", bold = true }
+h5 = { fg = "peach", bold = true }
+h6 = { fg = "overlay0", bold = true }
+rule_char = "─"
+rule_color = "surface0"
+
+[code]
+inline_fg = "red"
+inline_bg = "surface0"
+block_border = "surface1"
+block_bg = "mantle"
+syntax_theme = "base16-ocean.light"
+line_numbers = true
+lang_label = true
+
+[text]
+bold = { bold = true }
+italic = { italic = true }
+strikethrough = { strikethrough = true }
+
+[link]
+text = "blue"
+url = "overlay0"
+style = "underline"
+
+[blockquote]
+border = "blue"
+text = "subtext0"
+border_char = "▌"
+
+[list]
+bullet_chars = ["●", "○", "■", "□"]
+number_style = { fg = "yellow" }
+task_done = "✓"
+task_pending = "○"
+task_done_color = "green"
+task_pending_color = "overlay0"
+
+[table]
+border = "surface1"
+header = { bold = true, fg = "text" }
+separator = "surface0"
+style = "rounded"
+
+[hr]
+char = "─"
+color = "surface1"
+style = "full"
+
+[image]
+show_alt = true
+style = { fg = "yellow", italic = true }
+prefix = "🖼 "
+
+[alert]
+note_color = "blue"
+tip_color = "green"
+important_color = "mauve"
+warning_color = "yellow"
+caution_color = "red"

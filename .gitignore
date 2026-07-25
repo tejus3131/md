@@ -1,0 +1,8 @@
+/target
+*.swp
+*.swo
+.DS_Store
+.cursor/
+debug-*.log
+*.profraw
+*.profdata

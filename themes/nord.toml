@@ -1,0 +1,86 @@
+[meta]
+name = "nord"
+variant = "dark"
+
+[palette]
+nord0 = "#2e3440"
+nord1 = "#3b4252"
+nord2 = "#434c5e"
+nord3 = "#4c566a"
+nord4 = "#d8dee9"
+nord5 = "#e5e9f0"
+nord6 = "#eceff4"
+nord7 = "#8fbcbb"
+nord8 = "#88c0d0"
+nord9 = "#81a1c1"
+nord10 = "#5e81ac"
+nord11 = "#bf616a"
+nord12 = "#d08770"
+nord13 = "#ebcb8b"
+nord14 = "#a3be8c"
+nord15 = "#b48ead"
+
+[heading]
+h1 = { fg = "nord8", bold = true, underline = true }
+h2 = { fg = "nord9", bold = true }
+h3 = { fg = "nord14", bold = true }
+h4 = { fg = "nord13", bold = true }
+h5 = { fg = "nord12", bold = true }
+h6 = { fg = "nord3", bold = true }
+rule_char = "─"
+rule_color = "nord3"
+
+[code]
+inline_fg = "nord11"
+inline_bg = "nord1"
+block_border = "nord3"
+block_bg = "nord1"
+syntax_theme = "base16-ocean.dark"
+line_numbers = true
+lang_label = true
+
+[text]
+bold = { bold = true }
+italic = { italic = true }
+strikethrough = { strikethrough = true }
+
+[link]
+text = "nord8"
+url = "nord3"
+style = "underline"
+
+[blockquote]
+border = "nord9"
+text = "nord3"
+border_char = "▌"
+
+[list]
+bullet_chars = ["●", "○", "■", "□"]
+number_style = { fg = "nord13" }
+task_done = "✓"
+task_pending = "○"
+task_done_color = "nord14"
+task_pending_color = "nord3"
+
+[table]
+border = "nord3"
+header = { bold = true, fg = "nord4" }
+separator = "nord2"
+style = "rounded"
+
+[hr]
+char = "─"
+color = "nord3"
+style = "full"
+
+[image]
+show_alt = true
+style = { fg = "nord13", italic = true }
+prefix = "🖼 "
+
+[alert]
+note_color = "nord8"
+tip_color = "nord14"
+important_color = "nord15"
+warning_color = "nord13"
+caution_color = "nord11"

@@ -1,0 +1,82 @@
+[meta]
+name = "dracula"
+variant = "dark"
+
+[palette]
+bg = "#282a36"
+fg = "#f8f8f2"
+selection = "#44475a"
+comment = "#6272a4"
+cyan = "#8be9fd"
+green = "#50fa7b"
+orange = "#ffb86c"
+pink = "#ff79c6"
+purple = "#bd93f9"
+red = "#ff5555"
+yellow = "#f1fa8c"
+current_line = "#44475a"
+
+[heading]
+h1 = { fg = "purple", bold = true, underline = true }
+h2 = { fg = "pink", bold = true }
+h3 = { fg = "cyan", bold = true }
+h4 = { fg = "green", bold = true }
+h5 = { fg = "orange", bold = true }
+h6 = { fg = "comment", bold = true }
+rule_char = "─"
+rule_color = "comment"
+
+[code]
+inline_fg = "green"
+inline_bg = "current_line"
+block_border = "comment"
+block_bg = "current_line"
+syntax_theme = "base16-ocean.dark"
+line_numbers = true
+lang_label = true
+
+[text]
+bold = { bold = true }
+italic = { italic = true }
+strikethrough = { strikethrough = true }
+
+[link]
+text = "cyan"
+url = "comment"
+style = "underline"
+
+[blockquote]
+border = "purple"
+text = "comment"
+border_char = "▌"
+
+[list]
+bullet_chars = ["●", "○", "■", "□"]
+number_style = { fg = "cyan" }
+task_done = "✓"
+task_pending = "○"
+task_done_color = "green"
+task_pending_color = "comment"
+
+[table]
+border = "comment"
+header = { bold = true, fg = "fg" }
+separator = "selection"
+style = "rounded"
+
+[hr]
+char = "─"
+color = "comment"
+style = "full"
+
+[image]
+show_alt = true
+style = { fg = "orange", italic = true }
+prefix = "🖼 "
+
+[alert]
+note_color = "cyan"
+tip_color = "green"
+important_color = "purple"
+warning_color = "yellow"
+caution_color = "red"

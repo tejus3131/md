@@ -1,0 +1,82 @@
+[meta]
+name = "github-light"
+variant = "light"
+
+[palette]
+bg = "#ffffff"
+fg = "#1f2328"
+muted = "#656d76"
+subtle = "#f6f8fa"
+border = "#d0d7de"
+accent = "#0969da"
+success = "#1a7f37"
+warning = "#9a6700"
+danger = "#d1242f"
+purple = "#8250df"
+pink = "#bf3989"
+orange = "#bc4c00"
+
+[heading]
+h1 = { fg = "accent", bold = true, underline = true }
+h2 = { fg = "accent", bold = true }
+h3 = { fg = "fg", bold = true }
+h4 = { fg = "fg", bold = true }
+h5 = { fg = "fg", bold = true }
+h6 = { fg = "muted", bold = true }
+rule_char = "─"
+rule_color = "border"
+
+[code]
+inline_fg = "pink"
+inline_bg = "subtle"
+block_border = "border"
+block_bg = "subtle"
+syntax_theme = "github-light"
+line_numbers = true
+lang_label = true
+
+[text]
+bold = { bold = true }
+italic = { italic = true }
+strikethrough = { strikethrough = true }
+
+[link]
+text = "accent"
+url = "muted"
+style = "underline"
+
+[blockquote]
+border = "border"
+text = "muted"
+border_char = "▌"
+
+[list]
+bullet_chars = ["●", "○", "■", "□"]
+number_style = { fg = "fg" }
+task_done = "✓"
+task_pending = "○"
+task_done_color = "success"
+task_pending_color = "muted"
+
+[table]
+border = "border"
+header = { bold = true, fg = "fg" }
+separator = "border"
+style = "rounded"
+
+[hr]
+char = "─"
+color = "border"
+style = "full"
+
+[image]
+show_alt = true
+style = { fg = "warning", italic = true }
+prefix = "🖼 "
+
+[alert]
+note_color = "accent"
+tip_color = "success"
+important_color = "purple"
+warning_color = "warning"
+caution_color = "danger"
