@@ -26,10 +26,10 @@ pub fn detect_color_depth() -> ColorDepth {
         return ColorDepth::None;
     }
 
-    if let Ok(ct) = env::var("COLORTERM") {
-        if ct == "truecolor" || ct == "24bit" {
-            return ColorDepth::TrueColor;
-        }
+    if let Ok(ct) = env::var("COLORTERM")
+        && (ct == "truecolor" || ct == "24bit")
+    {
+        return ColorDepth::TrueColor;
     }
 
     if env::var("TERM").is_ok_and(|t| t.contains("256color")) {
