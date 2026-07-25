@@ -6,7 +6,7 @@ Thanks for helping improve the terminal Markdown renderer.
 
 Requirements:
 
-- Rust **1.85+** (MSRV) — [rustup](https://rustup.rs/) or [mise](https://mise.jdx.dev/)
+- Rust **1.88+** (MSRV) — [rustup](https://rustup.rs/) or [mise](https://mise.jdx.dev/)
 - Optional: [pre-commit](https://pre-commit.com/)
 
 ```bash
@@ -55,7 +55,7 @@ After the first push of `main`, configure GitHub → **Settings → Branches →
 | `clippy` | `cargo clippy --all-targets --all-features -- -D warnings` |
 | `docs` | `RUSTDOCFLAGS="-D warnings" cargo doc --no-deps` |
 | `test` | `cargo test --all-targets` (Ubuntu + macOS) |
-| `msrv` | `cargo test --all-targets` on Rust 1.85 |
+| `msrv` | `cargo test --all-targets` on Rust 1.88 |
 
 Run the same locally before pushing.
 

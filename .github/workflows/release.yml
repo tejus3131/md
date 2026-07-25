@@ -100,7 +100,7 @@ jobs:
 
       - uses: softprops/action-gh-release@v2
         with:
-          body_file: release-notes.md
+          body_path: release-notes.md
           files: dist/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/tejus3131/md/actions/workflows/ci.yml/badge.svg)](https://github.com/tejus3131/md/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![MSRV](https://img.shields.io/badge/MSRV-1.85-orange.svg)](https://www.rust-lang.org/)
+[![MSRV](https://img.shields.io/badge/MSRV-1.88-orange.svg)](https://www.rust-lang.org/)
 
 Render Markdown beautifully in the terminal — GFM fidelity, configurable themes, and a fullscreen interactive viewer.
 
