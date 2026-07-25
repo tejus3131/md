@@ -23,7 +23,7 @@ syntect = "5"
 crossterm = { version = "0.28", features = ["use-dev-tty"] }
 libc = "0.2"
 serde = { version = "1", features = ["derive"] }
-toml = "0.8"
+toml = "1.1"
 unicode-width = "0.2"
 directories = "6"
 thiserror = "2"
