@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- Bump comrak 0.36 → 0.54, crossterm 0.28 → 0.29, toml 0.8 → 1
+- CI: explicit `permissions: contents: read`; bump Actions (checkout v7, artifacts, gh-release v3)
+- MSRV job pins via `toolchain: 1.88` on `dtolnay/rust-toolchain@stable` (avoids bad Dependabot bumps)
+
 ## [0.2.0] - 2026-07-25
 
 ### Added

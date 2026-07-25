@@ -29,7 +29,7 @@ jobs:
             os: ubuntu-latest
             cross: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: dtolnay/rust-toolchain@stable
         with:
@@ -63,7 +63,7 @@ jobs:
           tar -czf "${STAGE}.tar.gz" "$STAGE"
           shasum -a 256 "${STAGE}.tar.gz" > "${STAGE}.tar.gz.sha256"
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: md-${{ matrix.target }}
           path: |
@@ -75,9 +75,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           path: dist
           merge-multiple: true
@@ -98,7 +98,7 @@ jobs:
             echo "Release ${GITHUB_REF_NAME}" > release-notes.md
           fi
 
-      - uses: softprops/action-gh-release@v2
+      - uses: softprops/action-gh-release@v3
         with:
           body_path: release-notes.md
           files: dist/*
