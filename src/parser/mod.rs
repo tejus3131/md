@@ -10,12 +10,11 @@ pub fn default_options() -> Options<'static> {
     opts.extension.autolink = true;
     opts.extension.tasklist = true;
     opts.extension.footnotes = true;
-    opts.extension.header_ids = None;
     opts.parse.smart = true;
     opts
 }
 
-pub fn parse<'a>(arena: &'a Arena<AstNode<'a>>, input: &str) -> &'a AstNode<'a> {
+pub fn parse<'a>(arena: &'a Arena<'a>, input: &str) -> &'a AstNode<'a> {
     let opts = default_options();
     parse_document(arena, input, &opts)
 }

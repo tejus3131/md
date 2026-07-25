@@ -100,19 +100,19 @@ impl<'a> DocumentContext<'a> {
                 NodeValue::Document => Action::Children,
                 NodeValue::Heading(h) => Action::Heading(h.level),
                 NodeValue::Paragraph => Action::Paragraph,
-                NodeValue::Text(t) => Action::Text(t.clone()),
+                NodeValue::Text(t) => Action::Text(t.to_string()),
                 NodeValue::SoftBreak => Action::SoftBreak,
                 NodeValue::LineBreak => Action::LineBreak,
-                NodeValue::Code(c) => Action::InlineCode(c.literal.clone()),
+                NodeValue::Code(c) => Action::InlineCode(c.literal.to_string()),
                 NodeValue::Strong => Action::Strong,
                 NodeValue::Emph => Action::Emph,
                 NodeValue::Strikethrough => Action::Strike,
                 NodeValue::Link(link) => Action::Link {
-                    url: link.url.clone(),
+                    url: link.url.to_string(),
                 },
                 NodeValue::Image(_) => Action::Image,
                 NodeValue::CodeBlock(cb) => Action::CodeBlock {
-                    literal: cb.literal.clone(),
+                    literal: cb.literal.to_string(),
                     lang: cb.info.split_whitespace().next().unwrap_or("").to_string(),
                 },
                 NodeValue::BlockQuote => Action::BlockQuote,
@@ -121,15 +121,15 @@ impl<'a> DocumentContext<'a> {
                     start: nl.start,
                 },
                 NodeValue::Item(_) => Action::Item,
-                NodeValue::TaskItem(symbol) => Action::TaskItem(symbol.is_some()),
+                NodeValue::TaskItem(item) => Action::TaskItem(item.symbol.is_some()),
                 NodeValue::ThematicBreak => Action::ThematicBreak,
                 NodeValue::Table(..) => Action::Table,
                 NodeValue::TableRow(..) => Action::TableRow,
                 NodeValue::TableCell => Action::TableCell,
-                NodeValue::FootnoteDefinition(nfd) => Action::FootnoteDef(nfd.name.clone()),
-                NodeValue::FootnoteReference(nfr) => Action::FootnoteRef(nfr.name.clone()),
-                NodeValue::HtmlBlock(hb) => Action::HtmlBlock(hb.literal.clone()),
-                NodeValue::HtmlInline(h) => Action::HtmlInline(h.clone()),
+                NodeValue::FootnoteDefinition(nfd) => Action::FootnoteDef(nfd.name.to_string()),
+                NodeValue::FootnoteReference(nfr) => Action::FootnoteRef(nfr.name.to_string()),
+                NodeValue::HtmlBlock(hb) => Action::HtmlBlock(hb.literal.to_string()),
+                NodeValue::HtmlInline(h) => Action::HtmlInline(h.to_string()),
                 _ => Action::Children,
             }
         };
@@ -462,8 +462,8 @@ impl<'a> DocumentContext<'a> {
             let action = {
                 let data = child.data.borrow();
                 match &data.value {
-                    NodeValue::Text(t) => InlineAction::Text(t.clone()),
-                    NodeValue::Code(c) => InlineAction::Code(c.literal.clone()),
+                    NodeValue::Text(t) => InlineAction::Text(t.to_string()),
+                    NodeValue::Code(c) => InlineAction::Code(c.literal.to_string()),
                     NodeValue::SoftBreak | NodeValue::LineBreak => InlineAction::Break,
                     NodeValue::Strong => InlineAction::Bold,
                     NodeValue::Emph => InlineAction::Italic,
@@ -502,8 +502,8 @@ impl<'a> DocumentContext<'a> {
             let action = {
                 let data = child.data.borrow();
                 match &data.value {
-                    NodeValue::Text(t) => PlainAction::Text(t.clone()),
-                    NodeValue::Code(c) => PlainAction::Code(c.literal.clone()),
+                    NodeValue::Text(t) => PlainAction::Text(t.to_string()),
+                    NodeValue::Code(c) => PlainAction::Code(c.literal.to_string()),
                     NodeValue::SoftBreak | NodeValue::LineBreak => PlainAction::Break,
                     _ => PlainAction::Other,
                 }
