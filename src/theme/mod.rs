@@ -74,19 +74,18 @@ pub fn load_theme(name: &str) -> Result<Theme> {
 pub fn list_themes() -> Vec<String> {
     let mut names: Vec<String> = BUILTINS.keys().map(|k| k.to_string()).collect();
 
-    if let Some(dir) = user_themes_dir() {
-        if dir.exists() {
-            if let Ok(entries) = std::fs::read_dir(dir) {
-                for entry in entries.flatten() {
-                    let path = entry.path();
-                    if path.extension().is_some_and(|e| e == "toml")
-                        && let Some(stem) = path.file_stem()
-                    {
-                        let name = stem.to_string_lossy().to_string();
-                        if !names.contains(&name) {
-                            names.push(name);
-                        }
-                    }
+    if let Some(dir) = user_themes_dir()
+        && dir.exists()
+        && let Ok(entries) = std::fs::read_dir(dir)
+    {
+        for entry in entries.flatten() {
+            let path = entry.path();
+            if path.extension().is_some_and(|e| e == "toml")
+                && let Some(stem) = path.file_stem()
+            {
+                let name = stem.to_string_lossy().to_string();
+                if !names.contains(&name) {
+                    names.push(name);
                 }
             }
         }

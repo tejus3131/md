@@ -347,25 +347,25 @@ impl<'a> DocumentContext<'a> {
             return;
         }
 
-        if state.blockquote_depth > 0 {
-            if let Some(alert) = extensions::detect_alert(t) {
-                let color = match alert {
-                    extensions::AlertKind::Note => &self.theme.alert.note_color,
-                    extensions::AlertKind::Tip => &self.theme.alert.tip_color,
-                    extensions::AlertKind::Important => &self.theme.alert.important_color,
-                    extensions::AlertKind::Warning => &self.theme.alert.warning_color,
-                    extensions::AlertKind::Caution => &self.theme.alert.caution_color,
-                };
-                if let Some(c) = color {
-                    out.push_str(&colors::fg_color(&self.theme.resolve_color(c), self.depth));
-                }
-                out.push_str(colors::BOLD);
-                out.push_str(alert.icon());
-                out.push(' ');
-                out.push_str(alert.label());
-                out.push_str(colors::RESET);
-                return;
+        if state.blockquote_depth > 0
+            && let Some(alert) = extensions::detect_alert(t)
+        {
+            let color = match alert {
+                extensions::AlertKind::Note => &self.theme.alert.note_color,
+                extensions::AlertKind::Tip => &self.theme.alert.tip_color,
+                extensions::AlertKind::Important => &self.theme.alert.important_color,
+                extensions::AlertKind::Warning => &self.theme.alert.warning_color,
+                extensions::AlertKind::Caution => &self.theme.alert.caution_color,
+            };
+            if let Some(c) = color {
+                out.push_str(&colors::fg_color(&self.theme.resolve_color(c), self.depth));
             }
+            out.push_str(colors::BOLD);
+            out.push_str(alert.icon());
+            out.push(' ');
+            out.push_str(alert.label());
+            out.push_str(colors::RESET);
+            return;
         }
 
         out.push_str(t);
