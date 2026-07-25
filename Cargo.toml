@@ -18,7 +18,7 @@ path = "src/main.rs"
 
 [dependencies]
 clap = { version = "4", features = ["derive"] }
-comrak = { version = "0.36", default-features = false, features = ["syntect"] }
+comrak = { version = "0.54", default-features = false, features = ["syntect"] }
 syntect = "5"
 crossterm = { version = "0.28", features = ["use-dev-tty"] }
 libc = "0.2"
